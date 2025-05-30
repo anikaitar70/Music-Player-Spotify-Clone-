@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Streaming Signup</title>
+    <style>
+        
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('Untitled\ design\ \(2\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+nav {
+        text-align: left;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+#back {
+        background-color: #0e7cc5;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    #back:hover {
+        background-color: #0c145b;
+    }
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav>
+        <button onclick="login()" id='back'>LOGIN INSTEAD</button>
+             </nav>
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <form id="signup-form" class="col-md-6 text-white">
+                <h2 class="mb-4 text-white">Sign Up</h2>
+                
+                <div class="form-group">   
+                    <label for="name" class="text-white">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address" class="text-white">Address:</label>
+                    <input type="text" id="address" name="address" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="text-white">Phone No.:</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]{10}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="language" class="text-white">Language:</label>
+                    <select id="language" name="language" class="form-control" required>
+                        <option value="" disabled selected>Select Language</option>
+                        <option value="english" class="text-white">English</option>
+                        <option value="spanish" class="text-white">Spanish</option>
+                        <option value="french" class="text-white">French</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

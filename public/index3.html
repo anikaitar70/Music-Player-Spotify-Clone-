@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111727;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: white;
+            background-color: darkblue;
+        }
+        h1 {
+            text-align: center;
+            color: #fffdfd;
+        margin-bottom: 20px;
+        }
+        .song {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+        .song h2 {
+            margin-top: 0;
+        }
+        .song p {
+            margin: 5px 0;
+        }
+        nav {
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+    
+    #back {
+        background-color: #0e7cc5;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    #back:hover {
+        background-color: #0c145b;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+       <button onclick="back()" id='back'>GO BACK</button>
+            </nav>
+    <div class="container">
+        <h1>Song Information</h1>
+        <div id="songs"></div>
+    </div>
+
+    <script>
+        const songs = [
+            {
+                "title": "Bohemian Rhapsody",
+                "artist": "Queen",
+                "genre": "Rock",
+                "year": 1975,
+                "duration": "6:07"
+            },
+            {
+                "title": "Shape of You",
+                "artist": "Ed Sheeran",
+                "genre": "Pop",
+                "year": 2017,
+                "duration": "3:53"
+            },
+            {
+                "title": "Billie Jean",
+                "artist": "Michael Jackson",
+                "genre": "Pop",
+                "year": 1982,
+                "duration": "4:54"
+            },  {
+        "title": "Imagine",
+        "artist": "John Lennon",
+        "genre": "Pop",
+        "year": 1971,
+        "duration": "3:03"
+    },
+    {
+        "title": "Hotel California",
+        "artist": "Eagles",
+        "genre": "Rock",
+        "year": 1976,
+        "duration": "6:30"
+    },
+    {
+        "title": "Hey Jude",
+        "artist": "The Beatles",
+        "genre": "Rock",
+        "year": 1968,
+        "duration": "7:11"
+    },
+    {
+        "title": "Stairway to Heaven",
+        "artist": "Led Zeppelin",
+        "genre": "Rock",
+        "year": 1971,
+        "duration": "8:02"
+    },
+    {
+        "title": "Sweet Child o' Mine",
+        "artist": "Guns N' Roses",
+        "genre": "Rock",
+        "year": 1987,
+        "duration": "5:55"
+    },
+    {
+        "title": "Imagine",
+        "artist": "John Lennon",
+        "genre": "Pop",
+        "year": 1971,
+        "duration": "3:03"
+    },
+    {
+        "title": "Bohemian Rhapsody",
+        "artist": "Queen",
+        "genre": "Rock",
+        "year": 1975,
+        "duration": "6:07"
+    },
+    {
+        "title": "Yesterday",
+        "artist": "The Beatles",
+        "genre": "Rock",
+        "year": 1965,
+        "duration": "2:05"
+    },
+    {
+        "title": "Let It Be",
+        "artist": "The Beatles",
+        "genre": "Rock",
+        "year": 1970,
+        "duration": "3:50"
+    },
+    {
+        "title": "I Will Always Love You",
+        "artist": "Whitney Houston",
+        "genre": "R&B",
+        "year": 1992,
+        "duration": "4:31"
+    }
+        ];
+
+        const songsContainer = document.getElementById('songs');
+        songs.forEach(song => {
+            const songDiv = document.createElement('div');
+            songDiv.classList.add('song');
+
+            const title = document.createElement('h2');
+            title.textContent = song.title;
+            songDiv.appendChild(title);
+
+            const artist = document.createElement('p');
+            artist.textContent = "Artist: " + song.artist;
+            songDiv.appendChild(artist);
+
+            const genre = document.createElement('p');
+            genre.textContent = "Genre: " + song.genre;
+            songDiv.appendChild(genre);
+
+            const year = document.createElement('p');
+            year.textContent = "Year: " + song.year;
+            songDiv.appendChild(year);
+
+            const duration = document.createElement('p');
+            duration.textContent = "Duration: " + song.duration;
+            songDiv.appendChild(duration);
+
+            songsContainer.appendChild(songDiv);
+        });
+        function back() {
+         window.location.href = '../index2.html';
+         }
+        document.getElementById('navigationText').addEventListener('click', back);
+    </script>
+</body>
+</html>

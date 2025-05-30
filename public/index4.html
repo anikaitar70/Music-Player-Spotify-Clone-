@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="loginApp">
+<head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/public/Untitled\ design\ \(2\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+nav {
+        text-align: left;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+#back {
+        background-color: #0e7cc5;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    #back:hover {
+        background-color: #0c145b;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="LoginController as login" style="background-image: url('background.jpg');">
+    <nav>
+        <button id = 'back' ng-click="login.toggleSignup()" id='back'>SIGN UP INSTEAD</button>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <form id="login-form" class="col-md-6 text-white" ng-show="login.showLogin">
+                <h2 class="mb-4 text-white">Login</h2>
+                <div class="form-group">
+                    <label for="username" class="text-white">Username:</label>
+                    <input type="text" ng-model="login.username" id="username" name="username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="text-white">Password:</label>
+                    <input type="password" ng-model="login.password" id="password" name="password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" ng-click="login.submit()">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
